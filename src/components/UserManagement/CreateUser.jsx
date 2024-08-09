@@ -167,7 +167,7 @@ const CreateUser = () => {
       if (!values.lastName.trim()) {
         errors.lastName = `${t('Last Name Required')}`;
       }
-      if (!values.phoneNumber.trim()) {
+      if (!values.phoneNumber) {
         errors.phoneNumber = `${t('Phone Number Required')}`;
       }
       if (!values.username.trim()) {
@@ -422,7 +422,14 @@ const CreateUser = () => {
                       type="number"
                       value={formik.values.phoneNumber}
                       onChange={formik.handleChange}
-                      
+                      // sx={{
+                      //   "& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button": {
+                      //                            display: "none",
+                      //                          },
+                      //  "& input[type=number]": {
+                      //                            MozAppearance: "textfield",
+                      //                          },
+                      //  }}
                       error={
                         formik.touched.phoneNumber && formik.errors.phoneNumber
                           ? true
